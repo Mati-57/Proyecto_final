@@ -3,24 +3,31 @@
 require_once __DIR__ . "/../config/conexion.php"; // Importar la conexión a la base de datos
 
 // Definición de la clase Producto que interactuará con la tabla 'productos' en la base de datos
-class Producto {
+class Producto
+{
     private $conn; // Propiedad privada para almacenar la conexión mysqli
 
     // El constructor recibe el objeto $conn (conexión a la base de datos) y lo asigna a la propiedad $this->conn
-    public function __construct($conn) {
+    public function __construct($conn)
+    {
         $this->conn = $conn;
     }
 
     // Método para obtener todos los productos de la base de datos
-    public function obtenerTodos() {
+    public function obtenerTodos()
+    {
         $stmt = $this->conn->prepare("SELECT * FROM productos");
+        if (!$stmt) {
+            die("Error en prepare: " . $this->conn->error);
+        }
         $stmt->execute();
         $result = $stmt->get_result();
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
     // Método para obtener un producto por ID
-    public function obtenerPorId($id) {
+    public function obtenerPorId($id)
+    {
         $stmt = $this->conn->prepare("SELECT * FROM productos WHERE id = ?");
         $stmt->bind_param("i", $id);
         $stmt->execute();
@@ -29,34 +36,37 @@ class Producto {
     }
 
     // Método para agregar un nuevo producto
-    public function agregar($nombre, $descripcion, $precio, $categoria) {
+    public function agregar($nombre, $descripcion, $precio, $categoria)
+    {
         $stmt = $this->conn->prepare("INSERT INTO productos (nombre, descripcion, precio, categoria) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssd", $nombre, $descripcion, $precio, $categoria);
+        $stmt->bind_param("ssds", $nombre, $descripcion, $precio, $categoria);
         return $stmt->execute();
     }
 
     // Método para modificar un producto existente
-    public function modificar($id, $nombre, $descripcion, $precio, $categoria) {
+    public function modificar($id, $nombre, $descripcion, $precio, $categoria)
+    {
         $stmt = $this->conn->prepare("UPDATE productos SET nombre=?, descripcion=?, precio=?, categoria=? WHERE id=?");
-        $stmt->bind_param("ssdi", $nombre, $descripcion, $precio, $categoria, $id);
+        $stmt->bind_param("ssdsi"/* Cada letra indica el tipo de dato de cada parámetro envíado con la función bind_param() (s= String. d= Double. i= Integer) */, $nombre, $descripcion, $precio, $categoria, $id);
         return $stmt->execute();
     }
 
     // Método para eliminar un producto
-    public function eliminar($id) {
+    public function eliminar($id)
+    {
         $stmt = $this->conn->prepare("DELETE FROM productos WHERE id=?");
         $stmt->bind_param("i", $id);
         return $stmt->execute();
     }
-    
+
     // Método para buscar productos por nombre, categoría o descripción
-    public function buscar($texto) {
-    $like = "%$texto%";
-    $stmt = $this->conn->prepare("SELECT * FROM productos WHERE nombre LIKE ? OR categoria LIKE ? OR descripcion LIKE ? OR CAST(id AS CHAR) LIKE ?");
-    $stmt->bind_param("sss", $like, $like, $like, $like);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    return $result->fetch_all(MYSQLI_ASSOC);
+    public function buscar($texto)
+    {
+        $like = "%$texto%";
+        $stmt = $this->conn->prepare("SELECT * FROM productos WHERE nombre LIKE ? OR categoria LIKE ? OR descripcion LIKE ? OR CAST(id AS CHAR) LIKE ?");
+        $stmt->bind_param("ssss", $like, $like, $like, $like);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }
-}
-?>

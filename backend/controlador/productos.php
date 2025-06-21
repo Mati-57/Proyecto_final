@@ -1,19 +1,22 @@
 <?php
-require_once __DIR__ . '/../modelo/Producto.php';
+require_once __DIR__ . '/../modelo/producto.php';
 
-$productoModel = new Producto($conn); 
+$productoModel = new Producto($conn);
 
-function buscarProductos($texto) {
+function buscarProductos($texto)
+{
     global $productoModel;
     echo json_encode($productoModel->buscar($texto));
 }
 
-function listarProductos() {
+function listarProductos()
+{
     global $productoModel;
     echo json_encode($productoModel->obtenerTodos());
 }
 
-function mostrarProducto($id) {
+function mostrarProducto($id)
+{
     global $productoModel;
     $producto = $productoModel->obtenerPorId($id);
     if ($producto) {
@@ -23,7 +26,8 @@ function mostrarProducto($id) {
     }
 }
 
-function agregarProducto($nombre, $descripcion, $precio, $categoria) {
+function agregarProducto($nombre, $descripcion, $precio, $categoria)
+{
     global $productoModel;
     if ($productoModel->agregar($nombre, $descripcion, $precio, $categoria)) {
         echo json_encode(["mensaje" => "Producto agregado"]);
@@ -32,7 +36,8 @@ function agregarProducto($nombre, $descripcion, $precio, $categoria) {
     }
 }
 
-function modificarProducto($id, $nombre, $descripcion, $precio, $categoria) {
+function modificarProducto($id, $nombre, $descripcion, $precio, $categoria)
+{
     global $productoModel;
     if ($productoModel->modificar($id, $nombre, $descripcion, $precio, $categoria)) {
         echo json_encode(["mensaje" => "Producto modificado", "id" => $id]);
@@ -41,7 +46,8 @@ function modificarProducto($id, $nombre, $descripcion, $precio, $categoria) {
     }
 }
 
-function eliminarProducto($id) {
+function eliminarProducto($id)
+{
     global $productoModel;
     if ($productoModel->eliminar($id)) {
         echo json_encode(["mensaje" => "Producto eliminado", "id" => $id]);
@@ -49,4 +55,3 @@ function eliminarProducto($id) {
         echo json_encode(["error" => "No se pudo eliminar"]);
     }
 }
-?>
