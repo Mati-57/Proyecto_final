@@ -1,4 +1,4 @@
-const API_URL = "https://localhost/Proyecto_final/backend/api/api_productos.php"; // URL base del endpoint
+const API_URL = "http://localhost/Proyecto_final/backend/api/api_productos.php"; // URL base del endpoint
 
 window.onload = function () {
     listarProductos(); // Llama a la función para listar productos al cargar la página
