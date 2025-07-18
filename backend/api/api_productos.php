@@ -1,4 +1,15 @@
 <?php
+// Habilitar CORS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
+// Manejar preflight OPTIONS
+if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
+    http_response_code(200);
+    exit();
+}
+
 require __DIR__ . "/../controlador/productos.php"; // Importar el controlador que maneja la lógica de negocio para productos
 
 // Obtener el método de la solicitud HTTP (GET, POST, PUT, DELETE)

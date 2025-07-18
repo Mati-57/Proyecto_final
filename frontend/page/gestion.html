@@ -6,15 +6,15 @@
     <title>Gestión de Productos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../css/gestion.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container py-4">
-        <h1 class="text-center mb-4">Gestión de Productos</h1>
-        <div class="row g-4 align-items-start">
-            <div class="col-12 col-lg-4">
-                <form id="formAgregarProducto" class="mb-4"
-                    onsubmit="event.preventDefault(); agregarProductoDesdeFormulario();">
+    <div class="container">
+        <h1 class="text-center">Gestión de Productos</h1>
+        <div>
+            <div>
+                <form id="formAgregarProducto" onsubmit="event.preventDefault(); agregarProductoDesdeFormulario();">
                     <h2>Agregar Producto</h2>
                     <div class="mb-2">
                         <label class="form-label">Nombre:
@@ -39,7 +39,7 @@
                     <button type="submit" class="btn btn-primary w-100">Agregar</button>
                 </form>
             </div>
-            <div class="col-12 col-lg-8">
+            <div>
                 <input type="text" id="buscadorProductos" class="form-control mb-3"
                     placeholder="Buscar productos (ID, Nombre, Descripción) . . ." />
                 <div id="productosContainer" class="table-responsive"></div>

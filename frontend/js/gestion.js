@@ -44,6 +44,10 @@ function mostrarTablaProductos(productos) {
     `;
 
     productos.forEach(p => {
+        // Escapar comillas simples y dobles en los valores para evitar errores JS
+        const nombre = String(p.nombre).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        const descripcion = String(p.descripcion).replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        const categoria = String(p.categoria).replace(/'/g, "\\'").replace(/"/g, '&quot;');
         html += `
             <tr>
                 <td data-label="ID">${p.id}</td>
@@ -57,11 +61,11 @@ function mostrarTablaProductos(productos) {
                 <td data-label="¿Modificar?">
                     <button onclick="
                         document.getElementById('formModificar').style.display='block';
-                        document.getElementById('modificarId').value=${p.id};
-                        document.getElementById('modificarNombre').value='${p.nombre}';
-                        document.getElementById('modificarDescripcion').value='${p.descripcion}';
+                        document.getElementById('modificarId').value='${p.id}';
+                        document.getElementById('modificarNombre').value='${nombre}';
+                        document.getElementById('modificarDescripcion').value='${descripcion}';
                         document.getElementById('modificarPrecio').value='${p.precio}';
-                        document.getElementById('modificarCategoria').value='${p.categoria}';
+                        document.getElementById('modificarCategoria').value='${categoria}';
                     ">Modificar</button>
                 </td>
             </tr>
@@ -96,7 +100,6 @@ function enviarModificacion(event) {
 
     modificarProducto(id, nombre, descripcion, precio, categoria);
 
-    document.getElementById('formModificar').style.display = 'none';
 }
 
 // Obtener un producto por ID (GET)
