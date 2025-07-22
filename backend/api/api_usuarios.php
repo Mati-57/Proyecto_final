@@ -18,19 +18,17 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 if ($requestMethod == "POST") {
     $data = json_decode(file_get_contents("php://input"), true);
 
-    // Login de usuario
-    if (isset($data['nombre_usuario']) && isset($data['password'])) {
-        loginUsuario($data['nombre_usuario'], $data['password']);
-    }
     // Registro de usuario
-    elseif (
-        isset($data['nombre']) && isset($data['apellido']) && isset($data['nombre_usuario']) &&
+    if (
+        isset($data['nombre_usuario']) && isset($data['apellido_usuario']) && isset($data['email']) &&
         isset($data['tipo']) && isset($data['password'])
     ) {
-        agregarUsuario($data['nombre'], $data['apellido'], $data['nombre_usuario'], $data['tipo'], $data['password']);
+        registrarUsuario($data['nombre_usuario'], $data['apellido_usuario'], $data['email'], $data['tipo'], $data['password']);
+    }
+    // Login de usuario
+    elseif (isset($data['nombre_usuario']) && isset($data['password'])) {
+        loginUsuario($data['nombre_usuario'], $data['password']);
     } else {
         echo json_encode(["error" => "Datos insuficientes"]);
     }
-} else {
-    echo json_encode(["error" => "Método no permitido"]);
 }

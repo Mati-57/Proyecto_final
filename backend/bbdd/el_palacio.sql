@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-07-2025 a las 00:45:24
+-- Tiempo de generación: 22-07-2025 a las 23:11:58
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -116,8 +116,7 @@ INSERT INTO `productos` (`nombre`, `descripcion`, `precio`, `categoria`, `id`) V
 ('Smartphone Samsung A15', 'Celular con cámara triple y 128GB de memoria', 249, 'Telefonía', 6),
 ('Disco SSD Kingston 480GB', 'Unidad de estado sólido SATA3', 32.99, 'Almacenamiento', 7),
 ('Monitor LG 24\" IPS', 'Monitor Full HD con panel IPS', 129.99, 'Electrónica', 8),
-('Mochila Targus Urban', 'Mochila resistente para notebooks de 15.6\"', 39.95, 'Accesorios', 9),
-('Impresora HP DeskJet', 'Impresora multifunción WiFi', 78.9, 'Oficina', 10);
+('pan', 'lindo', 50, 'Comida', 11);
 
 -- --------------------------------------------------------
 
@@ -130,25 +129,30 @@ CREATE TABLE `usuario` (
   `nombre_usuario` varchar(255) NOT NULL,
   `apellido_usuario` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `contraseña` varchar(255) NOT NULL,
-  `tiempo_creacion` timestamp NOT NULL DEFAULT current_timestamp()
+  `password` varchar(255) NOT NULL,
+  `tipo` varchar(50) NOT NULL DEFAULT 'cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_usuario`, `email`, `contraseña`, `tiempo_creacion`) VALUES
-(11, 'juanito23', '', 'juanito23@gmail.com', '1234abcd', '2025-06-01 13:15:00'),
-(12, 'carla_dev', '', 'carla.dev@hotmail.com', 'qwerty123', '2025-06-03 17:20:00'),
-(13, 'adminmaster', '', 'admin@tienda.com', 'adminpass', '2025-06-04 12:00:00'),
-(14, 'tomas_gamer', '', 'tomasg@correo.com', 'pass4321', '2025-06-05 21:30:00'),
-(15, 'luli_art', '', 'luli.art@gmail.com', 'arte2025', '2025-06-07 14:45:00'),
-(16, 'fernandoTech', '', 'fer.tech@yahoo.com', 'techlife!', '2025-06-09 01:00:00'),
-(17, 'vale_mkt', '', 'vale.marketing@mail.com', 'mkt2025val', '2025-06-10 11:15:00'),
-(18, 'fede_dev', '', 'fede@devmail.com', 'devrules99', '2025-06-11 19:25:00'),
-(19, 'rocio_admin', '', 'rocio.adm@gmail.com', 'seguriD4D', '2025-06-12 16:10:00'),
-(20, 'nico_test', '', 'nico.test@correo.com', 'test123test', '2025-06-13 20:40:00');
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `apellido_usuario`, `email`, `password`, `tipo`) VALUES
+(11, 'juanito23', '', 'juanito23@gmail.com', '1234abcd', 'cliente'),
+(12, 'carla_dev', '', 'carla.dev@hotmail.com', 'qwerty123', 'cliente'),
+(13, 'adminmaster', '', 'admin@tienda.com', 'adminpass', 'cliente'),
+(14, 'tomas_gamer', '', 'tomasg@correo.com', 'pass4321', 'cliente'),
+(15, 'luli_art', '', 'luli.art@gmail.com', 'arte2025', 'cliente'),
+(16, 'fernandoTech', '', 'fer.tech@yahoo.com', 'techlife!', 'cliente'),
+(17, 'vale_mkt', '', 'vale.marketing@mail.com', 'mkt2025val', 'cliente'),
+(18, 'fede_dev', '', 'fede@devmail.com', 'devrules99', 'cliente'),
+(19, 'rocio_admin', '', 'rocio.adm@gmail.com', 'seguriD4D', 'cliente'),
+(20, 'nico_test', '', 'nico.test@correo.com', 'test123test', 'cliente'),
+(21, 'pepe', 'pepe', 'pepitorodriguez@correofalso.com', '$2y$10$aH.vCjWCS.4BKmtaghMqeeihvPImuiFMIYJfqjUawUsTanzY2KLVC', 'cliente'),
+(23, 'pedro', 'julian', 'pepitorodriguez@correofalso.com', '$2y$10$hdZTnTTzEidFs16t4MllEeDRLYawJqUN/A6RlRPkHE8x6iPmN5oxm', 'cliente'),
+(24, 'pedro', 'julian', 'pepitorodriguez@correofalso.com', '$2y$10$0i6cRnBEsX6tAAu3ENvONO0m9v74KlkhJbueNC8pU2djO9KtuRxSi', 'cliente'),
+(25, 'pedro', 'julian', 'pepitorodriguez@correofalso.com', '$2y$10$22IhVscSJZrekcHAvJKQCeb5o1pObJeIq/3zC8cdKZ/KHCT.YOWXq', 'cliente'),
+(26, 'pepe', 'pedro', 'pepitorodriguez@correofalso.com', '$2y$10$mdYQCQznReeF9gXtpGMz9.RisXyWaZo0uHBWhavVHpr2GywNGsiFC', 'cliente');
 
 --
 -- Índices para tablas volcadas
@@ -239,13 +243,13 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Restricciones para tablas volcadas
@@ -275,4 +279,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-

@@ -1,27 +1,21 @@
 <?php
-
-require_once __DIR__ . '/../modelo/usuario.php';
 require_once __DIR__ . '/../config/conexion.php';
+require_once __DIR__ . '/../modelo/Usuario.php';
 
 $usuarioModel = new Usuario($conn);
 
-// Función para agregar un usuario
-function agregarUsuario($nombre, $apellido, $nombre_usuario, $tipo, $contraseña)
+function registrarUsuario($nombre_usuario, $apellido_usuario, $email, $tipo, $password)
 {
     global $usuarioModel;
-    $resultado = $usuarioModel->agregar($nombre, $apellido, $nombre_usuario, $tipo, $contraseña);
-    if ($resultado->success) {
-        echo json_encode(["mensaje" => $resultado->message, "id" => $resultado->insert_id]);
-    } else {
-        echo json_encode(["error" => $resultado->message, "detalle" => $resultado->error]);
-    }
+    $resultado = $usuarioModel->registrar($nombre_usuario, $apellido_usuario, $email, $tipo, $password);
+    echo json_encode($resultado);
 }
 
-// Función para login de usuario
-function loginUsuario($nombre_usuario, $password)
+function loginUsuario($usuario, $password)
 {
     global $usuarioModel;
-    $resultado = $usuarioModel->login($nombre_usuario, $password);
+    $resultado = $usuarioModel->logear($usuario, $password);
+
     if ($resultado) {
         echo json_encode(["success" => true, "usuario" => $resultado]);
     } else {
