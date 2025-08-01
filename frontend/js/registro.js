@@ -1,4 +1,4 @@
-const API_URL = "http://localhost/Proyecto_final/backend/api/api_usuarios.php";
+const API_URL = "../../backend/api/api_usuarios.php";
 
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('registerForm').addEventListener('submit', enviarRegistro);

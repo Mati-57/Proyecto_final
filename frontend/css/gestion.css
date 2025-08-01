@@ -19,7 +19,8 @@ body {
 }
 
 
-h1, h2 {
+h1,
+h2 {
   color: #222;
   margin-bottom: 20px;
 }
@@ -164,6 +165,7 @@ form {
 
 
 @media screen and (max-width: 768px) {
+
   #productosContainer table,
   #productosContainer thead,
   #productosContainer tbody,
