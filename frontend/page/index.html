@@ -1,148 +1,144 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>El Palacio</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/index.css">
-</head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../page/index.html">El Palacio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#carta">Carta</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#carrito">Carrito</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">👤</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="../page/index.html">El Palacio</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#inicio">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#carta">Carta</a>
+    <header id="inicio"></header>
 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#carrito">Carrito</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contacto">Contacto</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">👤</a>
-            </li>
-          </ul>
+    <header id="carrito"></header>
+
+    <header id="carta">
+      <div class="grid-container">
+        <div class="grid-item">
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrkLBOnSq_yOj9VtI0BDCtct0tF7Ot8ezFnE1XI7kBwvO3_WPmADHUDZb8yfRspaElDdWltJhBvN7SY5kaMu48O268BjDRWu78PCOEdL1ZesIDhJx3sR3qpX6QwngEo9oPHc9VI=s680-w680-h510-rw"
+            alt="Carnes"
+          />
+          <h3>Carnes</h3>
+          <p class="descripcion">Aquí podés ver todas las carnes.</p>
+          <button class="precio" onclick="mostrarOverlay('carnes')">
+            Ver más
+          </button>
+        </div>
+        <div class="grid-item">
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npPYQ-ai3wsRWtAJm1C5q9pln58ht2h2vzjUOjh_N1ttuURdTEFTt5EqmZySaPN2DunQTdebnZ5Lx93VkOu8eXJtlkTBYzyXAcyUZ3TLZxrG8BfffupLxzxNzQaNZA8HWxGo-CZqA=s680-w680-h510-rw"
+            alt="Bebidas"
+          />
+          <h3>Bebidas</h3>
+          <p class="descripcion">Aquí podés ver todas las bebidas.</p>
+          <button class="precio" onclick="mostrarOverlay('bebidas')">
+            Ver más
+          </button>
+        </div>
+        <div class="grid-item">
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq4CrfpKD8wbEH37twBB21qpkfttDGdh5UDUgdokuuMokxuewlSosUX2SieM_R1eRuXIC6wZm4IG-B1lqxJDkWuQl1xrzE2yNFgOAWPnaUAN58YUKTWatntrKlsiQ7ERyvCkxuL=w141-h118-n-k-no-nu"
+            alt="Pastas"
+          />
+          <h3>Pastas</h3>
+          <p class="descripcion">Aquí podés ver todas las pastas.</p>
+          <button class="precio" onclick="mostrarOverlay('pastas')">
+            Ver más
+          </button>
         </div>
       </div>
-    </nav>
-  </header>
-  <header id="inicio">
+    </header>
 
-  </header>
-
-  <header id="carrito">
-
-  </header>
-
-  <header id="carta">
-    <div class="grid-container">
-      <div class="grid-item">
-        <img
-          src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrkLBOnSq_yOj9VtI0BDCtct0tF7Ot8ezFnE1XI7kBwvO3_WPmADHUDZb8yfRspaElDdWltJhBvN7SY5kaMu48O268BjDRWu78PCOEdL1ZesIDhJx3sR3qpX6QwngEo9oPHc9VI=s680-w680-h510-rw"
-          alt="Carnes">
-        <h3>Carnes</h3>
-        <p class="descripcion">Aquí podés ver todas las carnes.</p>
-        <button class="precio" onclick="mostrarOverlay('carnes')">Ver más</button>
+    <header id="carnes" class="overlay-header">
+      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img
+            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npofXixx-C1csoapYGFGZAbwvD8qiHB_Bay89SUYHLtXMIUTkIyE6Jp6iwYm3IyknEKC2rkmSqoYP_Kxb6MaxgEhPTLyTSWeA689e4YJWAY-5ceogm1MH7iuxZMa6zjw6qEfCJJXQ=w141-h101-n-k-no-nu"
+            alt="Milanesa"
+          />
+          <h3>Milanesa</h3>
+          <p class="descripcion">Milanesa con papas.</p>
+          <p class="precio">$450</p>
+        </div>
       </div>
-      <div class="grid-item">
-        <img
-          src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npPYQ-ai3wsRWtAJm1C5q9pln58ht2h2vzjUOjh_N1ttuURdTEFTt5EqmZySaPN2DunQTdebnZ5Lx93VkOu8eXJtlkTBYzyXAcyUZ3TLZxrG8BfffupLxzxNzQaNZA8HWxGo-CZqA=s680-w680-h510-rw"
-          alt="Bebidas">
-        <h3>Bebidas</h3>
-        <p class="descripcion">Aquí podés ver todas las bebidas.</p>
-        <button class="precio" onclick="mostrarOverlay('bebidas')">Ver más</button>
+    </header>
+
+    <header id="bebidas" class="overlay-header">
+      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="imagen2.jpg" alt="Coca-Cola" />
+          <h3>Coca-Cola</h3>
+          <p class="descripcion">Botella 1L</p>
+          <p class="precio">$120</p>
+        </div>
       </div>
-      <div class="grid-item">
-        <img
-          src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq4CrfpKD8wbEH37twBB21qpkfttDGdh5UDUgdokuuMokxuewlSosUX2SieM_R1eRuXIC6wZm4IG-B1lqxJDkWuQl1xrzE2yNFgOAWPnaUAN58YUKTWatntrKlsiQ7ERyvCkxuL=w141-h118-n-k-no-nu"
-          alt="Pastas">
-        <h3>Pastas</h3>
-        <p class="descripcion">Aquí podés ver todas las pastas.</p>
-        <button class="precio" onclick="mostrarOverlay('pastas')">Ver más</button>
+    </header>
+
+    <header id="pastas" class="overlay-header">
+      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="" alt="Tallarines" />
+          <h3>Tallarines</h3>
+          <p class="descripcion">Con salsa bolognesa.</p>
+          <p class="precio">$390</p>
+        </div>
       </div>
+    </header>
 
-    </div>
-  </header>
-
-
-  <header id="carnes" class="overlay-header">
-    <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-    <div class="grid-container">
-
-      <div class="grid-item">
-        <img
-          src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npofXixx-C1csoapYGFGZAbwvD8qiHB_Bay89SUYHLtXMIUTkIyE6Jp6iwYm3IyknEKC2rkmSqoYP_Kxb6MaxgEhPTLyTSWeA689e4YJWAY-5ceogm1MH7iuxZMa6zjw6qEfCJJXQ=w141-h101-n-k-no-nu"
-          alt="Milanesa">
-        <h3>Milanesa</h3>
-        <p class="descripcion">Milanesa con papas.</p>
-        <p class="precio">$450</p>
+    <footer id="contacto" class="footer">
+      <div class="container text-center">
+        <p>© 2025 El Palacio. Todos los derechos reservados.</p>
+        <p>
+          Contacto: "Inserten aquí el correo de el palacio" | Tel: "Inserten
+          aquí el teléfono de el palacio"
+        </p>
       </div>
+    </footer>
 
-    </div>
-  </header>
-
-  <header id="bebidas" class="overlay-header">
-    <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-    <div class="grid-container">
-      <div class="grid-item">
-        <img src="imagen2.jpg" alt="Coca-Cola">
-        <h3>Coca-Cola</h3>
-        <p class="descripcion">Botella 1L</p>
-        <p class="precio">$120</p>
-      </div>
-    </div>
-  </header>
-
-  <header id="pastas" class="overlay-header">
-    <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-    <div class="grid-container">
-      <div class="grid-item">
-        <img src="" alt="Tallarines">
-        <h3>Tallarines</h3>
-        <p class="descripcion">Con salsa bolognesa.</p>
-        <p class="precio">$390</p>
-      </div>
-    </div>
-  </header>
-
-</body>
-
-<script>
-  function mostrarOverlay(id) {
-
-    document.querySelectorAll('.overlay-header').forEach(h => h.style.display = 'none');
-
-    const seccion = document.getElementById(id);
-    if (seccion) {
-      seccion.style.display = 'flex';
-    }
-  }
-
-  function cerrarOverlay() {
-    document.querySelectorAll('.overlay-header').forEach(h => h.style.display = 'none');
-  }
-</script>
-
-<footer id="contacto" class="footer">
-  <div class="container text-center">
-    <p>© 2025 El Palacio. Todos los derechos reservados.</p>
-    <p>Contacto: "Inserten aquí el correo de el palacio" | Tel: "Inserten aquí el teléfono de el palacio"</p>
-  </div>
-</footer>
-
+    <script src="../js/navbar.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

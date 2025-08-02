@@ -1,65 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Gestión de Productos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/gestion.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/gestion.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  </head>
 
-<body>
-    <!-- Recordatorio para evitar confusiones: No se utilza el Navbar de Bootstrap para esta página -->
+  <body>
     <div class="container">
-        <h1 class="text-center">Gestión de Productos</h1>
+      <h1 class="text-center">Gestión de Productos</h1>
+      <div>
         <div>
-            <div>
-                <form id="formAgregarProducto" onsubmit="event.preventDefault(); agregarProductoDesdeFormulario();">
-                    <h2>Agregar Producto</h2>
-                    <div class="mb-2">
-                        <label class="form-label">Nombre:
-                            <input type="text" id="nombreProducto" class="form-control" required>
-                        </label>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Descripción:
-                            <input type="text" id="descripcionProducto" class="form-control" required>
-                        </label>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Precio:
-                            <input type="number" id="precioProducto" class="form-control" step="0.01" required>
-                        </label>
-                    </div>
-                    <div class="mb-2">
-                        <label class="form-label">Categoria:
-                            <input type="text" id="categoriaProducto" class="form-control" step="0.01" required>
-                        </label>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Agregar</button>
-                </form>
+          <form
+            id="formAgregarProducto"
+            onsubmit="event.preventDefault(); agregarProductoDesdeFormulario();"
+          >
+            <h2>Agregar Producto</h2>
+            <div class="mb-2">
+              <label class="form-label"
+                >Nombre:
+                <input
+                  type="text"
+                  id="nombreProducto"
+                  class="form-control"
+                  required
+                />
+              </label>
             </div>
-            <div>
-                <input type="text" id="buscadorProductos" class="form-control mb-3"
-                    placeholder="Buscar productos (ID, Nombre, Descripción) . . ." />
-                <div id="productosContainer" class="table-responsive"></div>
+            <div class="mb-2">
+              <label class="form-label"
+                >Descripción:
+                <input
+                  type="text"
+                  id="descripcionProducto"
+                  class="form-control"
+                  required
+                />
+              </label>
             </div>
+            <div class="mb-2">
+              <label class="form-label"
+                >Precio:
+                <input
+                  type="number"
+                  id="precioProducto"
+                  class="form-control"
+                  step="0.01"
+                  required
+                />
+              </label>
+            </div>
+            <div class="mb-2">
+              <label class="form-label"
+                >Categoria:
+                <input
+                  type="text"
+                  id="categoriaProducto"
+                  class="form-control"
+                  step="0.01"
+                  required
+                />
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Agregar</button>
+          </form>
         </div>
+        <div>
+          <input
+            type="text"
+            id="buscadorProductos"
+            class="form-control mb-3"
+            placeholder="Buscar productos (ID, Nombre, Descripción) . . ."
+          />
+          <div id="productosContainer" class="table-responsive"></div>
+        </div>
+      </div>
     </div>
 
     <script src="../js/gestion.js"></script>
     <script>
-        // Función para agregar producto desde el formulario
-        function agregarProductoDesdeFormulario() {
-            let nombre = document.getElementById('nombreProducto').value;
-            let descripcion = document.getElementById('descripcionProducto').value;
-            let precio = parseFloat(document.getElementById('precioProducto').value);
-            let categoria = document.getElementById('categoriaProducto').value;
+      // Función para agregar producto desde el formulario
+      function agregarProductoDesdeFormulario() {
+        let nombre = document.getElementById("nombreProducto").value;
+        let descripcion = document.getElementById("descripcionProducto").value;
+        let precio = parseFloat(
+          document.getElementById("precioProducto").value
+        );
+        let categoria = document.getElementById("categoriaProducto").value;
 
-            agregarProducto(nombre, descripcion, precio, categoria);
-        }
+        agregarProducto(nombre, descripcion, precio, categoria);
+      }
     </script>
-</body>
-
+  </body>
 </html>

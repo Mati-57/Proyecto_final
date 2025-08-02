@@ -11,7 +11,7 @@
 <body>
     <header>
         <div class="header-container">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="../page/index.html">El Palacio</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,14 +39,15 @@
                     </div>
                 </div>
             </nav>
+
     </header>
 
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="row w-100">
             <div class="col-12 col-md-6 offset-md-3">
-                <div class="card shadow login-container">
+                <div class="card shadow registro-container">
                     <div class="card-body">
-                        <h2 class="card-title text-center mb-4">Registro</h2>
+                        <h2 class="card-title text-center" style="margin-bottom: 3;">Registro</h2>
                         <form id="registerForm">
                             <div class="mb-3">
                                 <input type="text" id="nombre" class="form-control" placeholder="Nombre" required>
@@ -63,6 +64,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary w-100 rounded-pill">Registrarse</button>
                             <p id="registerErrorMsg" class="error text-danger mt-3"></p>
+                            <div id="mensaje" class="mensaje-oculto"></div> <!-- Mensaje que se mostrará al crear una cuenta con éxito -->
                         </form>
                     </div>
                 </div>
@@ -70,7 +72,7 @@
         </div>
     </div>
 
-    <script src="../js/registro.js"></script>
+        <script src="../js/registro.js"></script>
 
     <footer id="contacto" class="footer">
         <div class="container text-center">
@@ -79,6 +81,8 @@
         </div>
     </footer>
 
+    <script src="../js/navbar.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

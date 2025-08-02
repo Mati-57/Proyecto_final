@@ -1,66 +1,75 @@
 html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 70px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px;
 }
 
 .login-container {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    margin: auto;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .login-container input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .login-container button {
-    width: 100%;
-    padding: 10px;
-    background-color: #0b4da3;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-weight: bold;
-    cursor: pointer;
+  padding: 10px;
+  background-color: #0b4da3;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 .login-container button:hover {
-    background-color: #033468;
-    transition: background-color 0.5s ease;
+  background-color: #033468;
+  transition: background-color 0.5s ease;
 }
 
 .login-container .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .footer {
-    background-color: #212529;
-    color: #fff;
-    padding: 20px 10px;
-    text-align: center;
-    font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #212529;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
 .footer p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 @media (max-width: 576px) {
-    .footer {
-        font-size: 12px;
-        padding: 15px 5px;
-    }
+  html {
+    overflow-y: auto;
+  }
+  .footer {
+    font-size: 12px;
+    padding: 15px 5px;
+  }
 }

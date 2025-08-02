@@ -1,18 +1,61 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: max-width 0.3s ease;
+}
+
+#mensaje {
+  white-space: pre-line;
+}
+
+@media (min-width: 768px) {
+  .login-container {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .login-container {
+    max-width: 600px;
+  }
+}
+
 .footer {
-    background-color: #212529;
-    color: #fff;
-    padding: 20px 10px;
-    text-align: center;
-    font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #212529;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  box-sizing: border-box;
 }
 
 .footer p {
-    margin: 5px 0;
+  margin: 5px 0;
 }
 
 @media (max-width: 576px) {
-    .footer {
-        font-size: 12px;
-        padding: 15px 5px;
-    }
+  html {
+    overflow-y: auto;
+  }
+  .footer {
+    font-size: 12px;
+    padding: 15px 5px;
+  }
 }
