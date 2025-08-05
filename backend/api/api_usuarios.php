@@ -1,4 +1,7 @@
 <?php
+
+require __DIR__ . "/../logs/log.php"; // Importar el archivo de configuración de registro de errores
+
 // Habilitar CORS
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");

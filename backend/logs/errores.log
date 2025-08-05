@@ -1,0 +1,3 @@
+[05-Aug-2025 20:59:11 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\Proyecto_final\backend\config\conexion.php on line 8
+[05-Aug-2025 20:59:14 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\Proyecto_final\backend\config\conexion.php on line 8
+[05-Aug-2025 20:59:15 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/2002): No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\Proyecto_final\backend\config\conexion.php on line 8

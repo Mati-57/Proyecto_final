@@ -1,4 +1,7 @@
 <?php
+
+require "../logs/log.php"; // Importar el archivo de configuración de registro de errores
+
 // Habilitar CORS
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
@@ -23,7 +26,7 @@ if ($requestMethod == "GET") {
     } else {
         listarProductos(); // Listar todos los productos
     }
-} elseif ($requestMethod == "POST") {
+} elseif ($requestMethod == "POS") {
     $data = json_decode(file_get_contents("php://input"), true);
     agregarProducto($data['nombre'], $data['descripcion'], $data['precio'], $data['categoria']);
 } elseif ($requestMethod == "PUT") {
