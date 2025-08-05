@@ -89,44 +89,21 @@
       </div>
     </header>
 
-    <header id="carnes" class="overlay-header">
-      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-      <div class="grid-container">
-        <div class="grid-item">
-          <img
-            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npofXixx-C1csoapYGFGZAbwvD8qiHB_Bay89SUYHLtXMIUTkIyE6Jp6iwYm3IyknEKC2rkmSqoYP_Kxb6MaxgEhPTLyTSWeA689e4YJWAY-5ceogm1MH7iuxZMa6zjw6qEfCJJXQ=w141-h101-n-k-no-nu"
-            alt="Milanesa"
-          />
-          <h3>Milanesa</h3>
-          <p class="descripcion">Milanesa con papas.</p>
-          <p class="precio">$450</p>
-        </div>
-      </div>
-    </header>
+   <header id="carnes" class="overlay-header" style="display:none;">
+  <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+  <div class="grid-container" id="carnesContainer"></div>
+</header>
 
-    <header id="bebidas" class="overlay-header">
-      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-      <div class="grid-container">
-        <div class="grid-item">
-          <img src="imagen2.jpg" alt="Coca-Cola" />
-          <h3>Coca-Cola</h3>
-          <p class="descripcion">Botella 1L</p>
-          <p class="precio">$120</p>
-        </div>
-      </div>
-    </header>
+<header id="bebidas" class="overlay-header" style="display:none;">
+  <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+  <div class="grid-container" id="bebidasContainer"></div>
+</header>
 
-    <header id="pastas" class="overlay-header">
-      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-      <div class="grid-container">
-        <div class="grid-item">
-          <img src="" alt="Tallarines" />
-          <h3>Tallarines</h3>
-          <p class="descripcion">Con salsa bolognesa.</p>
-          <p class="precio">$390</p>
-        </div>
-      </div>
-    </header>
+<header id="pastas" class="overlay-header" style="display:none;">
+  <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+  <div class="grid-container" id="pastasContainer"></div>
+</header>
+        <script src="../js/carta.js"></script>
 
     <footer id="contacto" class="footer">
       <div class="container text-center">
@@ -137,7 +114,7 @@
         </p>
       </div>
     </footer>
-
+   
     <script src="../js/navbar.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
   </body>
