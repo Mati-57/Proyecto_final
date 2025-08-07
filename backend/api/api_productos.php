@@ -26,7 +26,7 @@ if ($requestMethod == "GET") {
     } else {
         listarProductos(); // Listar todos los productos
     }
-} elseif ($requestMethod == "POS") {
+} elseif ($requestMethod == "POST") {
     $data = json_decode(file_get_contents("php://input"), true);
     agregarProducto($data['nombre'], $data['descripcion'], $data['precio'], $data['categoria']);
 } elseif ($requestMethod == "PUT") {

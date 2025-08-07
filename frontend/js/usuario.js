@@ -22,7 +22,7 @@ function enviarLogin(event) {
   }
 
   // Enviar datos al backend para login (POST)
-  fetch(USUARIOS_API_URL, {
+  fetch(API_URL, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
