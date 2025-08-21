@@ -10,7 +10,7 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="../page/index.html">El Palacio</a>
           <button
@@ -33,7 +33,7 @@
                 <a class="nav-link" href="#carta">Carta</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#carrito">Carrito</a>
+                <a class="nav-link" href="#reservas">Reservas</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#contacto">Contacto</a>
@@ -47,74 +47,228 @@
       </nav>
     </header>
 
-    <header id="inicio"></header>
+    <!-- Simplified hero section with minimal content -->
+    <section id="inicio" class="hero-section">
+      <div class="container text-center">
+        <h1>El Palacio</h1>
+        <p>Experiencia culinaria excepcional</p>
+      </div>
+    </section>
 
-    <header id="carrito"></header>
-
-    <header id="carta">
-      <div class="grid-container">
-        <div class="grid-item">
-          <img
-            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrkLBOnSq_yOj9VtI0BDCtct0tF7Ot8ezFnE1XI7kBwvO3_WPmADHUDZb8yfRspaElDdWltJhBvN7SY5kaMu48O268BjDRWu78PCOEdL1ZesIDhJx3sR3qpX6QwngEo9oPHc9VI=s680-w680-h510-rw"
-            alt="Carnes"
-          />
-          <h3>Carnes</h3>
-          <p class="descripcion">Aquí podés ver todas las carnes.</p>
-          <button class="precio" onclick="mostrarOverlay('carnes')">
-            Ver más
-          </button>
-        </div>
-        <div class="grid-item">
-          <img
-            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npPYQ-ai3wsRWtAJm1C5q9pln58ht2h2vzjUOjh_N1ttuURdTEFTt5EqmZySaPN2DunQTdebnZ5Lx93VkOu8eXJtlkTBYzyXAcyUZ3TLZxrG8BfffupLxzxNzQaNZA8HWxGo-CZqA=s680-w680-h510-rw"
-            alt="Bebidas"
-          />
-          <h3>Bebidas</h3>
-          <p class="descripcion">Aquí podés ver todas las bebidas.</p>
-          <button class="precio" onclick="mostrarOverlay('bebidas')">
-            Ver más
-          </button>
-        </div>
-        <div class="grid-item">
-          <img
-            src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq4CrfpKD8wbEH37twBB21qpkfttDGdh5UDUgdokuuMokxuewlSosUX2SieM_R1eRuXIC6wZm4IG-B1lqxJDkWuQl1xrzE2yNFgOAWPnaUAN58YUKTWatntrKlsiQ7ERyvCkxuL=w141-h118-n-k-no-nu"
-            alt="Pastas"
-          />
-          <h3>Pastas</h3>
-          <p class="descripcion">Aquí podés ver todas las pastas.</p>
-          <button class="precio" onclick="mostrarOverlay('pastas')">
-            Ver más
-          </button>
+    <!-- Simplified carta section with better spacing -->
+    <section id="carta" class="carta-section">
+      <div class="container">
+        <h2 class="section-title">Nuestra Carta</h2>
+        <div class="grid-container">
+          <div class="grid-item">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nrkLBOnSq_yOj9VtI0BDCtct0tF7Ot8ezFnE1XI7kBwvO3_WPmADHUDZb8yfRspaElDdWltJhBvN7SY5kaMu48O268BjDRWu78PCOEdL1ZesIDhJx3sR3qpX6QwngEo9oPHc9VI=s680-w680-h510-rw"
+              alt="Carnes"
+            />
+            <h3>Carnes</h3>
+            <p class="descripcion">Selección premium de carnes</p>
+            <button class="precio" onclick="mostrarOverlay('carnes')">
+              Ver más
+            </button>
+          </div>
+          <div class="grid-item">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4npPYQ-ai3wsRWtAJm1C5q9pln58ht2h2vzjUOjh_N1ttuURdTEFTt5EqmZySaPN2DunQTdebnZ5Lx93VkOu8eXJtlkTBYzyXAcyUZ3TLZxrG8BfffupLxzxNzQaNZA8HWxGo-CZqA=s680-w680-h510-rw"
+              alt="Bebidas"
+            />
+            <h3>Bebidas</h3>
+            <p class="descripcion">Bebidas selectas y cócteles</p>
+            <button class="precio" onclick="mostrarOverlay('bebidas')">
+              Ver más
+            </button>
+          </div>
+          <div class="grid-item">
+            <img
+              src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq4CrfpKD8wbEH37twBB21qpkfttDGdh5UDUgdokuuMokxuewlSosUX2SieM_R1eRuXIC6wZm4IG-B1lqxJDkWuQl1xrzE2yNFgOAWPnaUAN58YUKTWatntrKlsiQ7ERyvCkxuL=w141-h118-n-k-no-nu"
+              alt="Pastas"
+            />
+            <h3>Pastas</h3>
+            <p class="descripcion">Pastas artesanales frescas</p>
+            <button class="precio" onclick="mostrarOverlay('pastas')">
+              Ver más
+            </button>
+          </div>
         </div>
       </div>
+    </section>
+
+    <header id="carnes" class="overlay-header" style="display:none;">
+      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+      <div class="grid-container" id="carnesContainer"></div>
     </header>
 
-   <header id="carnes" class="overlay-header" style="display:none;">
-  <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-  <div class="grid-container" id="carnesContainer"></div>
-</header>
+    <header id="bebidas" class="overlay-header" style="display:none;">
+      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+      <div class="grid-container" id="bebidasContainer"></div>
+    </header>
 
-<header id="bebidas" class="overlay-header" style="display:none;">
-  <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-  <div class="grid-container" id="bebidasContainer"></div>
-</header>
+    <header id="pastas" class="overlay-header" style="display:none;">
+      <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
+      <div class="grid-container" id="pastasContainer"></div>
+    </header>
 
-<header id="pastas" class="overlay-header" style="display:none;">
-  <button class="cerrar-btn" onclick="cerrarOverlay()">Cerrar</button>
-  <div class="grid-container" id="pastasContainer"></div>
-</header>
-        <script src="../js/carta.js"></script>
-
-    <footer id="contacto" class="footer">
-      <div class="container text-center">
-        <p>© 2025 El Palacio. Todos los derechos reservados.</p>
-        <p>
-          Contacto: "Inserten aquí el correo de el palacio" | Tel: "Inserten
-          aquí el teléfono de el palacio"
-        </p>
+    <!-- Simplified reservations section in Spanish -->
+    <section id="reservas" class="section">
+      <div class="container">
+        <h2 class="section-title">Reservas</h2>
+        <p class="section-subtitle">Reserva tu mesa para una experiencia única</p>
+        
+        <form class="simple-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Tu email" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" placeholder="Tu teléfono" required>
+            </div>
+            <div class="form-group">
+              <label for="personas">Personas</label>
+              <select id="personas" required>
+                <option value="">Seleccionar</option>
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3">3 personas</option>
+                <option value="4">4 personas</option>
+                <option value="5">5 personas</option>
+                <option value="6">6+ personas</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" required>
+            </div>
+            <div class="form-group">
+              <label for="hora">Hora</label>
+              <select id="hora" required>
+                <option value="">Seleccionar hora</option>
+                <option value="18:00">18:00</option>
+                <option value="18:30">18:30</option>
+                <option value="19:00">19:00</option>
+                <option value="19:30">19:30</option>
+                <option value="20:00">20:00</option>
+                <option value="20:30">20:30</option>
+                <option value="21:00">21:00</option>
+                <option value="21:30">21:30</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group full-width">
+            <label for="comentarios">Comentarios especiales</label>
+            <textarea id="comentarios" placeholder="Alergias, preferencias o solicitudes especiales" rows="3"></textarea>
+          </div>
+          
+          <button type="submit" class="btn-primary">Reservar Mesa</button>
+        </form>
       </div>
-    </footer>
-   
+    </section>
+
+    <!-- Simplified contact section in Spanish -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">¿Tienes preguntas? Contáctanos</p>
+        
+        <div class="contact-layout">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 10C21 17 12 23 12 23S3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Ubicación</h4>
+                <p>Av. Principal 123<br>Centro, Ciudad</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 16.92V19.92C22 20.52 21.52 21 20.92 21C9.4 21 0 11.6 0 0.08C0 -0.52 0.48 -1 1.08 -1H4.08C4.68 -1 5.16 -0.52 5.16 0.08V3.08" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Teléfono</h4>
+                <p>+54 11 1234-5678<br>+54 11 8765-4321</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>reservas@elpalacio.com<br>info@elpalacio.com</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="contact-details">
+                <h4>Horarios</h4>
+                <p>Lun - Jue: 17:00 - 22:00<br>Vie - Dom: 17:00 - 23:00</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="contact-form">
+            <h3>Envíanos un mensaje</h3>
+            <form class="simple-form">
+              <div class="form-group">
+                <input type="text" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Tu email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" placeholder="Asunto" required>
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Tu mensaje" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="container">
+          <p>© 2025 El Palacio. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </section>
+
+    <script src="../js/carta.js"></script>
     <script src="../js/navbar.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
   </body>
