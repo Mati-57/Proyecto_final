@@ -38,7 +38,12 @@ function enviarLogin(event) {
       // Si el login es exitoso, guardar usuario en localStorage y redirigir
       if (data.success && data.usuario) {
         localStorage.setItem("usuario", JSON.stringify(data.usuario)); // Guarda la sesión del usuario
-        window.location.href = "../page/index.html";
+        if (data.usuario.tipo === "admin") {
+          window.location.href = "../page/gestion.html";
+        } else {
+          window.location.href = "../page/index.html";
+        }
+
       } else {
         // Mostrar mensaje de error si las credenciales son incorrectas
         errorMsg.textContent =
